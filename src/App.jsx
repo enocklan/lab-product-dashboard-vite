@@ -1,23 +1,32 @@
-import React, { useState } from 'react';
-import ProductList from './components/ProductList';
+import { useState } from "react";
+import ProductList from "./components/ProductList";
+import "./App.css";
 
-const App = () => {
-  // TODO: Define initial product data
+function App() {
+  const initialProducts = [
+    { id: 1, name: "Laptop", price: "$999", inStock: true },
+    { id: 2, name: "Phone", price: "$699", inStock: false },
+    { id: 3, name: "Tablet", price: "$499", inStock: true },
+  ];
 
-  // TODO: Implement state to manage filtering
+  const [products, setProducts] = useState(initialProducts);
 
-  // TODO: Implement logic to filter products based on availability
+  function handleDelete(id) {
+    setProducts((currentProducts) =>
+      currentProducts.filter((product) => product.id !== id)
+    );
+  }
 
   return (
-    <div>
-      <h1>{/* TODO: Add 'Product Dashboard' title here */}</h1>
-      
-      {/* TODO: Add buttons to allow filtering by availability */}
+    <div className="App">
+      <h1 id="header">Product Dashboard</h1>
 
-      {/* TODO: Render the ProductList component and pass filtered products */}
-      
+      <ProductList
+        products={products}
+        onDelete={handleDelete}
+      />
     </div>
   );
-};
+}
 
 export default App;

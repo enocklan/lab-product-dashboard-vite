@@ -40,3 +40,27 @@
 .read-the-docs {
   color: #888;
 }
+.productCard {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 8px;
+}
+
+.outOfStockClass {
+  background-color: #ffe0e0;
+  border: 2px solid red;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 8px;
+}
+
+.productCard button,
+.outOfStockClass button {
+  background-color: #dc3545;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
